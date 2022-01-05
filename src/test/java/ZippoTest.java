@@ -131,6 +131,16 @@ public class ZippoTest {
     }
 
     @Test
+    public void bodyArraySizeTest() {
+        given().
+                when().
+                get("/us/90210").
+                then().
+                log().all()  //print out response
+                .body("places", hasSize(1))
+        ;
+    }
+    @Test
     public void chainingTest() {
         given().
                 when().
